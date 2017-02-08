@@ -4,12 +4,21 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _UnionIntervals = require('./UnionIntervals');
+var _unionIntervals = require('./unionIntervals');
 
-Object.defineProperty(exports, 'UnionIntervals', {
+Object.defineProperty(exports, 'unionIntervals', {
   enumerable: true,
   get: function get() {
-    return _interopRequireDefault(_UnionIntervals).default;
+    return _interopRequireDefault(_unionIntervals).default;
+  }
+});
+
+var _intersectIntervals = require('./intersectIntervals');
+
+Object.defineProperty(exports, 'intersectIntervals', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_intersectIntervals).default;
   }
 });
 
