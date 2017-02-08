@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-export default function UnionIntervals(...intervals) {
+export default function unionIntervals(...intervals) {
     let union = [];
     let idxs = _.map(intervals, () => 0);
     let sumLengths = getSumLengths(intervals);
@@ -10,7 +10,7 @@ export default function UnionIntervals(...intervals) {
         let minIntervalIdx = idxs[minIdx];
         let currentMinInterval = intervals[minIdx][minIntervalIdx];
         let lastInterval = union.pop();
-        let unionizedInterval = unionIntervals(currentMinInterval, lastInterval);
+        let unionizedInterval = _unionIntervals(currentMinInterval, lastInterval);
         union = union.concat(unionizedInterval);
         idxs[minIdx]++;
     }
@@ -28,7 +28,7 @@ function getMinimumIntervalIdx(intervals, idxs) {
     return idx.i;
 }
 
-function unionIntervals(i1, i2) {
+function _unionIntervals(i1, i2) {
     if (!i1 && !i2)
         return [];
 

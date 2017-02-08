@@ -1,4 +1,4 @@
-import unionIntervals from '../src/unionIntervals';
+import {unionIntervals as union} from '../src/index';
 import {expect} from 'chai';
 
 describe('unionIntervals', () => {
@@ -7,7 +7,7 @@ describe('unionIntervals', () => {
         let i2 = [[4, 13], [14, 18], [25, 28]];
         let e =  [[0, 13], [14, 19], [20, 28]];
 
-        let result = unionIntervals(i1, i2);
+        let result = union(i1, i2);
 
         expect(result).to.deep.equal(e);
     });
@@ -17,7 +17,7 @@ describe('unionIntervals', () => {
         let i2 = [[12, 14], [19, 33], [42, 50], [60, 80], [90, 100]];
         let e =  [[0, 50], [60, 80], [90, 100]];
 
-        let result = unionIntervals(i1, i2);
+        let result = union(i1, i2);
 
         expect(result).to.deep.equal(e);
     });
@@ -29,18 +29,18 @@ describe('unionIntervals', () => {
         let i4 = [[0, 4], [100, 120], [150, 170], [190, 500]];
         let e =  [[0, 16], [17, 42], [48, 90], [100, 120], [150, 170], [190, 500]];
 
-        let result = unionIntervals(i1, i2, i3, i4);
+        let result = union(i1, i2, i3, i4);
 
         expect(result).to.deep.equal(e);
     });
 
     it('should union empty availabilities', () => {
-        let result = unionIntervals([], []);
+        let result = union([], []);
         expect(result).to.deep.equal([]);
     });
 
     it('should union empty and non-empty availabilities', () => {
-        let result = unionIntervals([], [[9, 10], [12, 14], [15, 18]], []);
+        let result = union([], [[9, 10], [12, 14], [15, 18]], []);
         expect(result).to.deep.equal([[9, 10], [12, 14], [15, 18]]);
     });
 });
