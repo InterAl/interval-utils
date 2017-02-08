@@ -20,7 +20,9 @@
   "keywords": [
     "interval",
     "utils",
-    "operations"
+    "operations",
+    "interval operations",
+    "interval utils"
   ],
   "author": "InterAl",
   "license": "ISC",
